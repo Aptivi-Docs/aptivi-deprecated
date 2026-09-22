@@ -1,0 +1,50 @@
+# Commands-for-KS
+
+### Administrative commands
+
+1. adduser: You can add the user's name whenever you need, with the password if required. However, passwords are required to ensure security. Currently, it has an argument of "adduser ."
+2. perm: You can manage user's permission settings. Right now, we only support disabling and enabling accounts, as well as making the specified user administrator. It has an argument of "perm \<Admin/Disabled> \<Allow/Disallow>."
+3. arginj: You can inject arguments into the kernel so that when you reboot, the arguments that are injected will be run. It has an argument of "arginj ."
+4. chhostname: You can change your hostname of your kernel to personalize things. It has an argument of "chhostname ."
+5. chmotd: You can change your message of the day, and you can include your own placeholders, including which stands for username, for the short date in "MM/DD/YYYY" format, for the long date that looks like "Saturday, December 1, 2018", for the short time in "HH:MM" format, for the long time in "HH:MM:SS AM/PM" format, for the standard time zone (eg. Egypt Standard Time), for the daylight time zone name (eg. Syria Daylight Time), and has an argument of "chmotd ."
+6. chusrname: You can change your username, or someone else's name, using "chusrname ," although if you changed your own username to new name, you'll be signed out immediately.
+7. rmuser: You can remove usernames, but you can't remove yours, if the specified user doesn't want to use the computer, or is uninvited, or is redundant. You can remove usernames using "rmuser ."
+8. netinfo: You can check your network status and network interface information, including WiFi support. You can also use this for troubleshooting problems with the network, and you can look at the packets that has an error.
+9. debuglog: You can check your debugging logs without having to go to the file explorer located at your user profile and open the text editor/viewer on "kernelDbg.log." When it was first appeared, you can only view debugging logs directly from the kernel that has debugging enabled.
+10. reloadconfig: You can reload the configuration file to read the new changes, but the changes will be applied after you restart the kernel.
+11. alias: You can manage your aliases to commands so you don't have to type long commands, using "alias \<add/rem> ."
+12. chmal: You can change your message of the day after login, and it supports the same placeholders, and it has the same argument of "chmal ."
+13. setsaver: You can set your screensaver of your choice or your customized one as the default one, and if you plan to use customized screensavers, you should name your extension as SS.m to be recognized as a screensaver, not as an extension. It has the argument of "setsaver \<SS.m/matrix/disco/colorMix>."
+14. reloadsaver: You can reload your screensaver extension file from the KSMods directory. You should load your screensaver file before you can set it as default and use it. It has the usage of "loadsaver \<SS.m>."
+15. cdbglog: You can clear debug log, resetting the size to 0
+16. chlang: Changes your language
+17. reloadmods: Reloads all the kernel modifications
+
+### Normal user commands
+
+1. chdir: You can change your working directory using "chdir "
+2. chpwd: You can change your password, or someone else's password. It's been reported that the normal accounts can use this command to change anyone's password without any consent. Usage: "chpwd "
+3. cls: To clear your screen from text.
+4. ftp: You can transfer files from/to an FTP server, and interact with the servers.
+5. list: You can list your current working directory, or list another directory using "list \[Directory]."
+6. lockscreen: You can lock your screen and show your default screensaver set by you or by the kernel. Default screensaver is Matrix.
+7. logout: You can log off your account when you're finished working.
+8. md: You can make your directory on the root directory, using "md ."
+9. noaliases: You can see the list of forbidden aliases set by the kernel. You can set them later on the future release.
+10. rd: You can remove your made directory using "rd ," but if you try to remove important folders, they get recreated at every restart and this behavior will be changed when we implement a real filesystem.
+11. read: You can see what's inside a file by "read ," much like "cat \<path/to/file>."
+12. reboot: You can restart your kernel if you have made manual or tool configuration changes for them to be reflected, or if you want to see the boot sequence again.
+13. savescreen: You can show the screensaver to prevent screen burn-outs.
+14. setcolors: You can set the kernel colors using "setcolors \<inputColor/def> \<licenseColor/def> \<contKernelErrorColor/def> \<uncontKernelErrorColor/def> \<hostNameShellColor/def> \<userNameShellColor/def> \<backgroundColor/def> \<neutralTextColor/def> \<cmdListColor/def> \<cmdDefColor/def>"
+15. setthemes: You can set the color set for your kernel, as known as themes, using "setthemes "
+16. showmotd: You can show your changes to the Message of the Day
+17. showtd: You can show your current time and date, as well as your timezone.
+18. showtdzone: You can show the time and date of the timezone, or you can show all of the dates and times of the timezones in the current time and date using "showtdzone " or "showtdzone "
+19. showmal: You can show your changes to the Message of the Day After Login
+20. shutdown: You can shut down your computer (The kernel, not the actual PC)
+21. sysinfo: You can show your system information, as well as the kernel settings.
+22. useddeps: You can show the open source libraries used
+23. usermanual: Opens https://github.com/EoflaOE/Kernel-Simulator/wiki
+24. sses: Gets SSE(1|2|3) capabilities found in processors
+
+For more information about every command, see the right pane.

@@ -1,0 +1,20 @@
+# upload or put FTP command
+
+## Summary
+
+Uploads the file to the server
+
+## Description
+
+If you need to add your local files in your current working directory to the current working server directory, you must have administrative privileges to add files.
+
+For example, if you're adding the picture of the New Delhi city using the PNG format, you need to upload it to the server for everyone to see. Assuming that it's "NewDelhi.PNG", use "put NewDelhi.PNG."
+
+## Command usage
+
+* upload/put (file)
+
+## Examples
+
+* upload Win10-May2019-x64.iso: Puts the "Win10-May2019-x64.iso" to the current working server directory
+* put urls.txt: Puts the "urls.txt" to the current working server directory
