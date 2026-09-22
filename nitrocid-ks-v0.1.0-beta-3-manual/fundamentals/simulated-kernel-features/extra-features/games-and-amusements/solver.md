@@ -1,0 +1,18 @@
+---
+description: Can you solve mathematical equations on time?
+---
+
+# 🔢 Solver
+
+<figure><img src="https://github.com/Aptivi-Stable-Docs/nks-manual-0.1.0-beta3/blob/main/.gitbook/assets/Beta3-013-Solver.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+As of 0.1.0, this feature has been moved to the kernel addons.
+{% endhint %}
+
+Can you solve the printed mathematical expressions on time? Test your speed in solving the exercises ranging from low to high difficulty.
+
+## Controls
+
+* `ENTER`: To submit your response
+* `Q`, then `ENTER`: Exit the game
