@@ -1,0 +1,455 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Aptivi - Deprecated Manuals
+  structure:
+    - type: space
+      key: space-1
+      title: Extensification - Manual
+      path: extensification-manual
+      content:
+        directory: ./extensification-manual
+    - type: space
+      key: space-2
+      title: VT.NET - Manual
+      path: vt.net-manual
+      content:
+        directory: ./vt.net-manual
+    - type: space
+      key: space-3
+      title: ColorSeq - Manual
+      path: colorseq-manual
+      content:
+        directory: ./colorseq-manual
+    - type: space
+      key: space-4
+      title: TermRead - Manual
+      path: termread-manual
+      content:
+        directory: ./termread-manual
+    - type: space
+      key: space-5
+      title: ColorPrint - Manual
+      path: colorprint-manual
+      content:
+        directory: ./colorprint-manual
+    - type: space
+      key: space-6
+      title: SpaceMan - Manual
+      path: spaceman-manual
+      content:
+        directory: ./spaceman-manual
+    - type: space
+      key: space-7
+      title: SemanVer - Manual
+      path: semanver-manual
+      content:
+        directory: ./semanver-manual
+    - type: space
+      key: space-8
+      title: Wordament - Manual
+      path: wordament-manual
+      content:
+        directory: ./wordament-manual
+    - type: space
+      key: space-9
+      title: Yunikodo - Manual
+      path: yunikodo-manual
+      content:
+        directory: ./yunikodo-manual
+    - type: space
+      key: space-10
+      title: SharpLyrics - Manual
+      path: sharplyrics-manual
+      content:
+        directory: ./sharplyrics-manual
+    - type: space
+      key: space-11
+      title: Namer - Manual
+      path: namer-manual
+      content:
+        directory: ./namer-manual
+    - type: space
+      key: space-12
+      title: Dictify - Manual
+      path: dictify-manual
+      content:
+        directory: ./dictify-manual
+    - type: space
+      key: space-13
+      title: Uname.NET - Manual
+      path: uname.net-manual
+      content:
+        directory: ./uname.net-manual
+    - type: space
+      key: space-14
+      title: Addresstigator - Manual
+      path: addresstigator-manual
+      content:
+        directory: ./addresstigator-manual
+    - type: space
+      key: space-15
+      title: Inxi.NET - Manual
+      path: inxi.net-manual
+      content:
+        directory: ./inxi.net-manual
+    - type: space
+      key: space-16
+      title: NameNumerizer - Manual
+      path: namenumerizer-manual
+      content:
+        directory: ./namenumerizer-manual
+    - type: space
+      key: space-17
+      title: Syndian - Manual
+      path: syndian-manual
+      content:
+        directory: ./syndian-manual
+    - type: space
+      key: space-18
+      title: ManagedWeatherMap - Manual
+      path: managedweathermap-manual
+      content:
+        directory: ./managedweathermap-manual
+    - type: space
+      key: space-19
+      title: ShoutStats - Manual
+      path: shoutstats-manual
+      content:
+        directory: ./shoutstats-manual
+    - type: space
+      key: space-20
+      title: RuntimeTrim - Manual
+      path: runtimetrim-manual
+      content:
+        directory: ./runtimetrim-manual
+    - type: space
+      key: space-21
+      title: NuGlobal - Manual
+      path: nuglobal-manual
+      content:
+        directory: ./nuglobal-manual
+    - type: space
+      key: space-22
+      title: LineNumbers - Manual
+      path: linenumbers-manual
+      content:
+        directory: ./linenumbers-manual
+    - type: space
+      key: space-23
+      title: Figletize - Manual
+      path: figletize-manual
+      content:
+        directory: ./figletize-manual
+    - type: space
+      key: space-24
+      title: GRILO - Manual
+      path: grilo-manual
+      content:
+        directory: ./grilo-manual
+    - type: space
+      key: space-25
+      title: NativeLand - Manual
+      path: nativeland-manual
+      content:
+        directory: ./nativeland-manual
+    - type: space
+      key: space-33
+      title: CliTester - Manual
+      path: clitester-manual
+      content:
+        directory: ./clitester-manual
+    - type: space
+      key: space-46
+      title: LocaleStation - Manual
+      path: localestation-manual
+      content:
+        directory: ./localestation-manual
+    - type: space
+      key: space-29
+      title: Nitrocid KS v0.1.0 Beta 1 - Manual
+      path: nitrocid-ks-v0.1.0-beta-1-manual
+      content:
+        directory: ./nitrocid-ks-v0.1.0-beta-1-manual
+    - type: space
+      key: space-30
+      title: Nitrocid KS v0.1.0 Beta 2 - Manual
+      path: nitrocid-ks-v0.1.0-beta-2-manual
+      content:
+        directory: ./nitrocid-ks-v0.1.0-beta-2-manual
+    - type: space
+      key: space-31
+      title: Nitrocid KS v0.1.0 Beta 3 - Manual
+      path: nitrocid-ks-v0.1.0-beta-3-manual
+      content:
+        directory: ./nitrocid-ks-v0.1.0-beta-3-manual
+    - type: space
+      key: space-32
+      title: Nitrocid KS v0.1.0 Release Candidate - Manual
+      path: nitrocid-ks-v0.1.0-release-candidate-manual
+      default: true
+      content:
+        directory: ./nitrocid-ks-v0.1.0-release-candidate-manual
+    - type: space
+      key: space-34
+      title: Nitrocid KS v0.0.24 - Manual
+      path: nitrocid-ks-v0.0.24-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.24-manual
+    - type: space
+      key: space-35
+      title: Nitrocid KS v0.1.1 - RTM
+      path: nitrocid-ks-v0.1.1-rtm
+      content:
+        directory: ./nitrocid-ks-v0.1.1-rtm
+    - type: space
+      key: space-36
+      title: Nitrocid KS v0.1.1 - Rolling Manual
+      path: nitrocid-ks-v0.1.1-rolling-manual
+      content:
+        directory: ./nitrocid-ks-v0.1.1-rolling-manual
+    - type: space
+      key: space-37
+      title: Nitrocid KS v0.1.1 - Service Pack 1
+      path: nitrocid-ks-v0.1.1-service-pack-1
+      content:
+        directory: ./nitrocid-ks-v0.1.1-service-pack-1
+    - type: space
+      key: space-38
+      title: Nitrocid KS v0.1.1 - Service Pack 2
+      path: nitrocid-ks-v0.1.1-service-pack-2
+      content:
+        directory: ./nitrocid-ks-v0.1.1-service-pack-2
+    - type: space
+      key: space-39
+      title: Nitrocid KS v0.1.1 - Service Pack 3
+      path: nitrocid-ks-v0.1.1-service-pack-3
+      content:
+        directory: ./nitrocid-ks-v0.1.1-service-pack-3
+    - type: space
+      key: space-48
+      title: Nitrocid KS v0.1.2 - RTM
+      path: nitrocid-ks-v0.1.2-rtm
+      content:
+        directory: ./nitrocid-ks-v0.1.2-rtm
+    - type: space
+      key: space-51
+      title: Nitrocid KS v0.1.2 - Rolling Manual
+      path: nitrocid-ks-v0.1.2-rolling-manual
+      content:
+        directory: ./nitrocid-ks-v0.1.2-rolling-manual
+    - type: space
+      key: space-49
+      title: Nitrocid KS v0.1.2 - Service Pack 1
+      path: nitrocid-ks-v0.1.2-service-pack-1
+      content:
+        directory: ./nitrocid-ks-v0.1.2-service-pack-1
+    - type: space
+      key: space-50
+      title: Nitrocid KS v0.1.2 - Service Pack 2
+      path: nitrocid-ks-v0.1.2-service-pack-2
+      content:
+        directory: ./nitrocid-ks-v0.1.2-service-pack-2
+    - type: space
+      key: space-52
+      title: Nitrocid KS v0.2.0 Release Candidate - Manual
+      path: nitrocid-ks-v0.2.0-release-candidate-manual
+      content:
+        directory: ./nitrocid-ks-v0.2.0-release-candidate-manual
+    - type: space
+      key: space-53
+      title: Nitrocid KS v0.2.0 Tech Preview - Manual
+      path: nitrocid-ks-v0.2.0-tech-preview-manual
+      content:
+        directory: ./nitrocid-ks-v0.2.0-tech-preview-manual
+    - type: space
+      key: space-54
+      title: Nitrocid KS v0.0.6 - Manual
+      path: nitrocid-ks-v0.0.6-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.6-manual
+    - type: space
+      key: space-55
+      title: Nitrocid KS v0.0.7 - Manual
+      path: nitrocid-ks-v0.0.7-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.7-manual
+    - type: space
+      key: space-56
+      title: Nitrocid KS v0.0.8 Release Candidate 1 - Manual
+      path: nitrocid-ks-v0.0.8-release-candidate-1-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.8-release-candidate-1-manual
+    - type: space
+      key: space-57
+      title: Nitrocid KS v0.0.8 Release Candidate 2 - Manual
+      path: nitrocid-ks-v0.0.8-release-candidate-2-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.8-release-candidate-2-manual
+    - type: space
+      key: space-58
+      title: Nitrocid KS v0.0.8 Release Candidate 3 - Manual
+      path: nitrocid-ks-v0.0.8-release-candidate-3-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.8-release-candidate-3-manual
+    - type: space
+      key: space-59
+      title: Nitrocid KS v0.0.8 - Manual
+      path: nitrocid-ks-v0.0.8-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.8-manual
+    - type: space
+      key: space-60
+      title: Nitrocid KS v0.0.9 - Manual
+      path: nitrocid-ks-v0.0.9-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.9-manual
+    - type: space
+      key: space-61
+      title: Nitrocid KS v0.0.10 - Manual
+      path: nitrocid-ks-v0.0.10-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.10-manual
+    - type: space
+      key: space-62
+      title: Nitrocid KS v0.0.11 - Manual
+      path: nitrocid-ks-v0.0.11-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.11-manual
+    - type: space
+      key: space-63
+      title: Nitrocid KS v0.0.12 - Manual
+      path: nitrocid-ks-v0.0.12-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.12-manual
+    - type: space
+      key: space-64
+      title: Nitrocid KS v0.0.13 - Manual
+      path: nitrocid-ks-v0.0.13-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.13-manual
+    - type: space
+      key: space-65
+      title: Nitrocid KS v0.0.14 - Manual
+      path: nitrocid-ks-v0.0.14-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.14-manual
+    - type: space
+      key: space-66
+      title: Nitrocid KS v0.0.15 - Manual
+      path: nitrocid-ks-v0.0.15-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.15-manual
+    - type: space
+      key: space-67
+      title: Nitrocid KS v0.0.16 - Manual
+      path: nitrocid-ks-v0.0.16-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.16-manual
+    - type: space
+      key: space-68
+      title: Nitrocid KS v0.0.17 - Manual
+      path: nitrocid-ks-v0.0.17-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.17-manual
+    - type: space
+      key: space-69
+      title: Nitrocid KS v0.0.18 - Manual
+      path: nitrocid-ks-v0.0.18-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.18-manual
+    - type: space
+      key: space-70
+      title: Nitrocid KS v0.0.19 - Manual
+      path: nitrocid-ks-v0.0.19-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.19-manual
+    - type: space
+      key: space-71
+      title: Nitrocid KS v0.0.20 - Manual
+      path: nitrocid-ks-v0.0.20-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.20-manual
+    - type: space
+      key: space-72
+      title: Nitrocid KS v0.0.21 - Manual
+      path: nitrocid-ks-v0.0.21-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.21-manual
+    - type: space
+      key: space-73
+      title: Nitrocid KS v0.0.22 - Manual
+      path: nitrocid-ks-v0.0.22-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.22-manual
+    - type: space
+      key: space-74
+      title: Nitrocid KS v0.0.23 - Manual
+      path: nitrocid-ks-v0.0.23-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.23-manual
+    - type: space
+      key: space-40
+      title: BassBoom v0.1.x - Manual
+      path: bassboom-v0.1.x-manual
+      content:
+        directory: ./bassboom-v0.1.x-manual
+    - type: space
+      key: space-75
+      title: BassBoom v0.2.x - Manual
+      path: bassboom-v0.2.x-manual
+      content:
+        directory: ./bassboom-v0.2.x-manual
+    - type: space
+      key: space-26
+      title: Terminaux 1.x - Manual
+      path: terminaux-1.x-manual
+      content:
+        directory: ./terminaux-1.x-manual
+    - type: space
+      key: space-27
+      title: Terminaux 2.x - Manual
+      path: terminaux-2.x-manual
+      content:
+        directory: ./terminaux-2.x-manual
+    - type: space
+      key: space-28
+      title: Terminaux 3.x - Manual
+      path: terminaux-3.x-manual
+      content:
+        directory: ./terminaux-3.x-manual
+    - type: space
+      key: space-41
+      title: Terminaux 4.x - Manual
+      path: terminaux-4.x-manual
+      content:
+        directory: ./terminaux-4.x-manual
+    - type: space
+      key: space-47
+      title: Terminaux 5.x - Manual
+      path: terminaux-5.x-manual
+      content:
+        directory: ./terminaux-5.x-manual
+    - type: space
+      key: space-42
+      title: Terminaux 7.0 Beta 1 - Manual
+      path: terminaux-7.0-beta-1-manual
+      content:
+        directory: ./terminaux-7.0-beta-1-manual
+    - type: space
+      key: space-43
+      title: Terminaux 7.0 Beta 2 - Manual
+      path: terminaux-7.0-beta-2-manual
+      content:
+        directory: ./terminaux-7.0-beta-2-manual
+    - type: space
+      key: space-44
+      title: Terminaux 7.0 Beta 3 - Manual
+      path: terminaux-7.0-beta-3-manual
+      content:
+        directory: ./terminaux-7.0-beta-3-manual
+    - type: space
+      key: space-45
+      title: Terminaux 7.0 Beta 4 - Manual
+      path: terminaux-7.0-beta-4-manual
+      content:
+        directory: ./terminaux-7.0-beta-4-manual
