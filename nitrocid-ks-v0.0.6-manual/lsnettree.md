@@ -1,0 +1,15 @@
+# lsnettree
+
+lsnettree command
+
+Summary: You can list computers that are online and their IP addresses in domains or workgroups, in the tree form
+
+Description
+
+If you want to get all of the computers that joined the workgroup or the domain in the tree form, you can use this command, but you must first ask for permission if you're on the public places such as office, school, cafe, etc., otherwise, staff members will disconnect your computer for getting addresses.
+
+This command is also useful if you are listing computers in your small network or your house that has multiple computers running Windows, no matter the version of Windows is running, in the tree form.
+
+Command usage
+
+* lsnettree

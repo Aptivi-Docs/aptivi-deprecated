@@ -1,0 +1,26 @@
+# scical
+
+scical command
+
+Summary: Allows you to evaluate more advanced expressions
+
+Description
+
+You can use the scientific calculator to evaluate advanced expressions, such as getting the square root of numbers, etc.
+
+Currently, this command uses the DataTable() class to evaluate expressions. Look at this documentation:
+
+https://docs.microsoft.com/dotnet/api/system.data.datacolumn.expression
+
+We will later re-write this calculator or probably merge into one.
+
+Command usage
+
+* scical (expression1|pi|e) (+|-|\*|/|%) (expression2|pi|e) ...
+* scical (sqrt|tan|sin|cos) (number)
+
+Examples
+
+* scical (29 \* 35) + pi: It calculates the expressions on the parentheses first, evaluates "pi", then adds it with the result of the multiplied numbers, and the result is 1018.14
+* scical e + pi: It adds an euler value and pi together, and the result is 5.86
+* scical sqrt 729: It gets the square root of 729, and the result is 27

@@ -1,0 +1,149 @@
+# Screensaver modding guide
+
+What is the screensaver for the kernel?
+
+The screensaver is the idle process that will activate if your computer went idle. You can also see the default screensaver by savescreen that is set by you or by the kernel.
+
+The screensaver can also be customized, and we'll teach you how to make your first screensaver, to make from the simplest screensaver to legendary ones.
+
+Basic modding (screensaver)
+
+1. How to make your own screensavers on Visual Studio 2017?
+2. Repeat steps 1-8 from the Modding guide
+3. On the Compile section, click on Build Events, then write this on the Post-build event command line:
+   * copy ....\ModFile.vb ........\ModFileSS.m (Put SS before the .m so that KS recognizes it as a screensaver and not as a mod)
+   * del /Q _._ (to make sure that there is no dummy DLL files being created as we don't use DLL for mods)
+4. Repeat steps 9-16 from the Modding guide, but replace the Imports KS.ModParser with Imports KS.Screensaver
+5. Between the Public Class... and the End Class lines, let Visual Studio 2017 know that you're going to create your KS screensaver by writing: Implements ICustomSaver
+6. If you're going to add namespaces, these rules must be met:
+   1. Don't import KS by itself. KS does that automatically
+   2. When importing modules/classes like TextWriterColor, it's written like this: Imports KS.TextWriterColor
+7. Define properties for mod information by putting below the Implements IScript: Property Initialized As Boolean Implements ICustomSaver.Initialized
+8. Make your init screensaver sub named InitSaver() that implements the ICustomSaver.InitSaver, by writing: Sub InitSaver() Implements ICustomSaver.InitSaver 'Your code here Initialized = True 'Put it anywhere in the sub if you're making If conditions, otherwise, leave it here. End Sub
+9. Replace every Your code here comment with your code. Repeat this step on all the interface subs
+10. Make your pre-display (Called before displaying screensaver) sub named PreDisplay() that implements the ICustomSaver.PreDisplay, by writing: Sub PreDisplay() Implements ICustomSaver.PreDisplay 'Your code here End Sub
+11. Make your display code (it should display something) sub named ScrnSaver() that implements the ICustomSaver.ScrnSaver, by writing: Sub ScrnSaver() Implements ICustomSaver.ScrnSaver 'Your code here End Sub
+12. You can make your subs anywhere on the class, but if:
+    1. they're on the different class, press Enter on End Class and make a public new class that stores new subs: Public Class AnotherClass 'Your definitions below, and so your subs, functions, interfaces, etc. End Class
+    2. they're trying to re-initialize the screensaver by re-calling InitSaver(), Try so on your test environment first, then the Production environment if that worked properly. And the following conditions should be met:
+    3. They shouldn't make an infinite loop unless you're making them that exits if specified conditions are met
+    4. They shouldn't try to cause errors with the kernel.
+    5. Put your sub call on one of the three subs that implements the ICustomSaver interface. Ex. If you're going to make a sub that's going to be called on screensaver display, place your sub call on the ScrnSaver() sub, and then your code on your sub.
+13. Run the build. When the build is successful, ignore the dialog box that appears.
+14. Run your Kernel Simulator you've just referenced to in your project, and load, set default, and lock your scren and your screensaver is there.
+15. In-Console Message Box, and Soon, Overnight, or Rude (Go away...) messages
+
+The back message box screensaver tells people that the computer owner is gone, or the owner tells that they should go away because there is important things going on in their computers. This is achieved in XLock in old Linux systems by putting 3 modes, Soon, Overnight, and Rude.
+
+1. Right-click on the project, and go to Add > Class
+2. Name your screensaver, but leave the .vb intact. Your mod name should be the one that is included in the Post-build built event. If your mod name is changed, you must also change the post-build event for the changes to be reflected.
+3. Click Add, and the code will be ready.
+4. Write below the (Assume that your mod name is SOR) Public Class SOR: Implements ICustomSaver
+5. Write above the Public Class SOR:
+   * Imports System
+   * Imports System.Threading
+   * Imports KS.Screensaver
+   * Imports KS.TextWriterColor
+   * Imports KS.Login
+6. You should get errors saying that these subs should be created.
+7. Make your start screensaver event handler by writing: Property Initialized As Boolean Implements ICustomSaver.Initialized Sub InitSaver() Implements ICustomSaver.InitSaver W("Load this screensaver using ""loadsaver SORSS.m"" and ""setsaver SORSS.m""", True, "neutralText") Initialized = True End Sub
+8. Since we're not implementing anything before displaying screensaver, we're going to leave this blank: Sub PreDisplay() Implements ICustomSaver.PreDisplay End Sub
+9. Write above the Property Initialized...: Public SOR\_Random As New Random() 'Initializes the random number generator Public S\_Random As New Random() 'Initializes the random number generator Public O\_Random As New Random() 'Initializes the random number generator Public R\_Random As New Random() 'Initializes the random number generator
+10. Write on the ScrnSaver() sub: Console.Clear() If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy. Exit For End If Dim SOR\_Integer As Integer = SOR\_Random.Next(1, 4) 'Chooses whether it's Soon, Overnight or Rude Dim Soon\_MsgID As Integer = SOR\_Random.Next(0, 2) 'Selects messages in the Soon array Dim Over\_MsgID As Integer = SOR\_Random.Next(0, 2) 'Selects messages in the Overnight array Dim Rude\_MsgID As Integer = SOR\_Random.Next(0, 3) 'Selects messages in the Rude array Console.SetWindowPosition(0, 1) Select Case SOR\_Integer Case 1 'Soon WriteMsg(SOR\_Integer, Soon\_MsgID) Case 2 'Overnight WriteMsg(SOR\_Integer, Over\_MsgID) Case 3 'Rude WriteMsg(SOR\_Integer, Rude\_MsgID) End Select Thread.Sleep(10000)
+11. You may need to create 1 function and 2 subs for this to work. Write them below the last End Sub: Public Shared Function ParsePlaces(ByVal text As String) text = text.Replace("", signedinusrnm) Return text End Function Public Shared Sub InitializeBar(ByVal strlen As Integer) W(" +-", "neutralText") For l As Integer = 0 To strlen - 1 W("-", "neutralText") Next W("-+", "neutralText") End Sub Public Shared Sub WriteMsg(ByVal TypeID As Integer, ByVal MsgID As Integer) Dim BackMessages As String() = {" will be back soon.", " is busy. He will be back soon."} Dim OvernightMsg As String() = {"It seems that will be back overnight", "He'll be back overnight."} Dim RudeMessages As String() = {"Can you go away?", "Go away, will be back soon", " isn't here. Go away."} Dim text As String = "" Select Case TypeID Case 1 text = ParsePlaces(BackMessages(MsgID)) Case 2 text = ParsePlaces(OvernightMsg(MsgID)) Case 3 text = ParsePlaces(RudeMessages(MsgID)) End Select InitializeBar(text.Length) W(" | {0} |", "neutralText", text) InitializeBar(text.Length) End Sub
+12. The code should look like this: Imports System Imports System.Threading Imports KS.Screensaver Imports KS.TextWriterColor Imports KS.Login Public Class SoonOvernightRude Implements ICustomSaver Property Initialized As Boolean Implements ICustomSaver.Initialized Public SOR\_Random As New Random() 'Initializes the random number generator Public S\_Random As New Random() 'Initializes the random number generator Public O\_Random As New Random() 'Initializes the random number generator Public R\_Random As New Random() 'Initializes the random number generator Sub InitSaver() Implements ICustomSaver.InitSaver W("Set this screensaver as default using ""setsaver SORSS.m""", "neutralText") Initialized = True End Sub Sub PreDisplay() Implements ICustomSaver.PreDisplay End Sub Sub ScrnSaver() Implements ICustomSaver.ScrnSaver Console.Clear() If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy. Exit For End If Dim SOR\_Integer As Integer = SOR\_Random.Next(1, 4) 'Chooses whether it's Soon, Overnight or Rude Dim Soon\_MsgID As Integer = S\_Random.Next(0, 2) 'Selects messages in the Soon array Dim Over\_MsgID As Integer = O\_Random.Next(0, 2) 'Selects messages in the Overnight array Dim Rude\_MsgID As Integer = R\_Random.Next(0, 3) 'Selects messages in the Rude array Console.SetCursorPosition(0, 1) Select Case SOR\_Integer Case 1 'Soon WriteMsg(SOR\_Integer, Soon\_MsgID) Case 2 'Overnight WriteMsg(SOR\_Integer, Over\_MsgID) Case 3 'Rude WriteMsg(SOR\_Integer, Rude\_MsgID) End Select Thread.Sleep(10000) End Sub Public Shared Function ParsePlaces(ByVal text As String) text = text.Replace("", signedinusrnm) Return text End Function Public Shared Sub InitializeBar(ByVal strlen As Integer) W(" +-", "neutralText") For l As Integer = 0 To strlen - 1 W("-", "neutralText") Next W("-+", "neutralText") End Sub Public Shared Sub WriteMsg(ByVal TypeID As Integer, ByVal MsgID As Integer) Dim BackMessages As String() = {" will be back soon.", " is busy. He will be back soon."} Dim OvernightMsg As String() = {"It seems that will be back overnight", "He'll be back overnight."} Dim RudeMessages As String() = {"Can you go away?", "Go away, will be back soon", " isn't here. Go away."} Dim text As String = "" Select Case TypeID Case 1 text = ParsePlaces(BackMessages(MsgID)) Case 2 text = ParsePlaces(OvernightMsg(MsgID)) Case 3 text = ParsePlaces(RudeMessages(MsgID)) End Select InitializeBar(text.Length) W(" | {0} |", "neutralText", text) InitializeBar(text.Length) End Sub End Class
+13. Run the build. When the build is successful, ignore the dialog box that appears.
+14. Run your Kernel Simulator you've just referenced to in your project, and load, set as default, and run savescreen.
+15. Simple Blank screen
+16. Repeat the steps 1-4 on the first example: In-Console Message Box, and Soon, Overnight, or Rude (Go away...) messages
+17. Write above the Public Class Blank (assuming that your classname is Blank):
+    * Imports System
+    * Imports KS.Screensaver
+18. Write these below the Implements ICustomSaver: Public Property Initialized As Boolean Implements ICustomSaver.Initialized Public Sub InitSaver() Implements ICustomSaver.InitSaver Initialized = True End Sub Public Sub PreDisplay() Implements ICustomSaver.PreDisplay End Sub Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+
+    End Sub
+19. Write inside the ScrnSaver sub: Console.Clear()
+20. The code should look like this: Imports System Imports KS.Screensaver Public Class Blank Implements ICustomSaver Public Property Initialized As Boolean Implements ICustomSaver.Initialized Public Sub InitSaver() Implements ICustomSaver.InitSaver Initialized = True End Sub Public Sub PreDisplay() Implements ICustomSaver.PreDisplay End Sub Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver Console.Clear() End Sub End Class
+21. Repeat the steps 13-14 on the first example: In-Console Message Box, and Soon, Overnight, or Rude (Go away...) messages
+22. Animation (Drawing Circle - 4 frames - 4 FPS)
+
+This example will get you started with the animations. Copy-paste the code for remaining examples.
+
+Imports System Imports Microsoft.VisualBasic.Constants Imports KS.TextWriterColor Imports System.Threading Imports KS.Screensaver Public Class ANI Implements ICustomSaver Public Property Initialized As Boolean Implements ICustomSaver.Initialized Public CurrentStep As Integer Public Sub InitSaver() Implements ICustomSaver.InitSaver Initialized = True End Sub Public Sub PreDisplay() Implements ICustomSaver.PreDisplay End Sub Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver For CurrentStep = 0 To 3 Console.Clear() If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy. Exit For End If W(aniset(CurrentStep), "neutralText") Thread.Sleep(150) Next End Sub
+
+```
+Public aniset As String() = {"                mmhyo/-         " + vbNewLine +
+                             "                mNMMMMMNy:      " + vbNewLine +
+                             "                   .:odMMMd/    " + vbNewLine +
+                             "                       .oMMMd.  " + vbNewLine +
+                             "                         `hMMN- " + vbNewLine +
+                             "                           yMMm`" + vbNewLine +
+                             "                            mMM+" + vbNewLine +
+                             "                            oMMh" + vbNewLine +
+                             "                                " + vbNewLine +
+                             "                                " + vbNewLine +
+                             "                                " + vbNewLine +
+                             "                                " + vbNewLine +
+                             "                                " + vbNewLine +
+                             "                                " + vbNewLine +
+                             "                                " + vbNewLine +
+                             "                                ",
+                             "                mmhyo/-         " + vbNewLine +
+                             "                mNMMMMMNy:      " + vbNewLine +
+                             "                   .:odMMMd/    " + vbNewLine +
+                             "                       .oMMMd.  " + vbNewLine +
+                             "                         `hMMN- " + vbNewLine +
+                             "                           yMMm`" + vbNewLine +
+                             "                            mMM+" + vbNewLine +
+                             "                            oMMh" + vbNewLine +
+                             "                            oMMh" + vbNewLine +
+                             "                            mMM+" + vbNewLine +
+                             "                           yMMm`" + vbNewLine +
+                             "                         `hMMN- " + vbNewLine +
+                             "                       `oMMMd.  " + vbNewLine +
+                             "                   .:odMMMm/    " + vbNewLine +
+                             "                mNMMMMMNy:      " + vbNewLine +
+                             "                mmhhs/-         ",
+                             "                mmhyo/-         " + vbNewLine +
+                             "                mNMMMMMNy:      " + vbNewLine +
+                             "                   .:odMMMd/    " + vbNewLine +
+                             "                       .oMMMd.  " + vbNewLine +
+                             "                         `hMMN- " + vbNewLine +
+                             "                           yMMm`" + vbNewLine +
+                             "                            mMM+" + vbNewLine +
+                             "                            oMMh" + vbNewLine +
+                             "hMMo                        oMMh" + vbNewLine +
+                             "+MMm                        mMM+" + vbNewLine +
+                             " mMMy                      yMMm`" + vbNewLine +
+                             " -NMMh`                  `hMMN- " + vbNewLine +
+                             "  .dMMMs`              `oMMMd.  " + vbNewLine +
+                             "    /dMMMdo:.      .:odMMMm/    " + vbNewLine +
+                             "      :yNMMMMMNmmNMMMMMNy:      " + vbNewLine +
+                             "         -/shhmmmmhhs/-         ",
+                             "         -/oydmmmmhyo/-         " + vbNewLine +
+                             "      :yNMMMMMNmmNMMMMMNy:      " + vbNewLine +
+                             "    :dMMMdo:.      .:odMMMd/    " + vbNewLine +
+                             "  .dMMMs.              .oMMMd.  " + vbNewLine +
+                             " -NMMh`                  `hMMN- " + vbNewLine +
+                             " mMMy                      yMMm`" + vbNewLine +
+                             "+MMm                        mMM+" + vbNewLine +
+                             "hMMo                        oMMh" + vbNewLine +
+                             "hMMo                        oMMh" + vbNewLine +
+                             "+MMm                        mMM+" + vbNewLine +
+                             " mMMy                      yMMm`" + vbNewLine +
+                             " -NMMh`                  `hMMN- " + vbNewLine +
+                             "  .dMMMs`              `oMMMd.  " + vbNewLine +
+                             "    /dMMMdo:.      .:odMMMm/    " + vbNewLine +
+                             "      :yNMMMMMNmmNMMMMMNy:      " + vbNewLine +
+                             "         -/shhmmmmhhs/-         "}
+```
+
+End Class
+
+4. Calculate from 0 to 1,000,000 with progress bar (dynamic)
+
+Imports System Imports Microsoft.VisualBasic.Constants Imports KS.TextWriterColor Imports Microsoft.VisualBasic.Strings Imports KS.Screensaver Public Class Dynamic Implements ICustomSaver Public Property Initialized As Boolean Implements ICustomSaver.Initialized Public Res As Integer Public ProgWent As Integer Public Check As Integer Public oldCheck As Integer Public Sub InitSaver() Implements ICustomSaver.InitSaver Initialized = True End Sub Public Sub PreDisplay() Implements ICustomSaver.PreDisplay End Sub Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver Console.Clear() For Res = 0 To 1000000 If Custom.CancellationPending = True Then 'This will fix the issue for the task being busy. Exit For End If Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 5) ShowStats() Next Check = 0 : oldCheck = 0 : ProgWent = 0 End Sub Public Sub ShowStats() W("{0} / 1000000 | {1}%", "neutralText", Res, FormatNumber(CStr(Res \* 100 / 1000000), 1)) UpdateProgressBar(Res \* 100 / 1000000) End Sub Public Sub UpdateProgressBar(ByVal percent As String) Check = percent / 5 W(Check, "neutralText") Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 3) W("+--------------------+", "neutralText") Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 2) W("| ", "neutralText") If Check <> oldCheck Then For Went As Integer = 0 To ProgWent W("\*", "neutralText") Next ProgWent += 1 End If Console.SetCursorPosition((Console.WindowWidth / 2) + 11, (Console.WindowHeight / 2) - 2) W(" |", "neutralText") Console.SetCursorPosition((Console.WindowWidth / 2) - 9, (Console.WindowHeight / 2) - 1) W("+--------------------+", "neutralText") oldCheck = percent / 5 End Sub End Class
+
+More examples
+
+If you want to check out more examples, feel free to check them out in the KSModExamples respository on Screensavers folder in GitHub.
