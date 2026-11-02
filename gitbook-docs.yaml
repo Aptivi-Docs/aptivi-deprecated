@@ -453,3 +453,10 @@ site:
       path: terminaux-7.0-beta-4-manual
       content:
         directory: ./terminaux-7.0-beta-4-manual
+    - type: space
+      key: space-76
+      title: Nitrocid KS v0.2.1 Tech Preview - Manual
+      path: nitrocid-ks-v0.2.1-tech-preview-manual
+      draft: true
+      content:
+        directory: ./nitrocid-ks-v0.2.1-tech-preview-manual
