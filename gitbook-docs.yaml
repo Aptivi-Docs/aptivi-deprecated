@@ -186,7 +186,6 @@ site:
       key: space-32
       title: Nitrocid KS v0.1.0 Release Candidate - Manual
       path: nitrocid-ks-v0.1.0-release-candidate-manual
-      default: true
       content:
         directory: ./nitrocid-ks-v0.1.0-release-candidate-manual
     - type: space
@@ -259,6 +258,7 @@ site:
       key: space-77
       title: Nitrocid KS v0.2.1 - Release Candidate
       path: nitrocid-ks-v0.2.1-release-candidate
+      default: true
       content:
         directory: ./nitrocid-ks-v0.2.1-release-candidate
     - type: space
