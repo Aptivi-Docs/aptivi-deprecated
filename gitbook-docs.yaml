@@ -190,12 +190,6 @@ site:
       content:
         directory: ./nitrocid-ks-v0.1.0-release-candidate-manual
     - type: space
-      key: space-34
-      title: Nitrocid KS v0.0.24 - Manual
-      path: nitrocid-ks-v0.0.24-manual
-      content:
-        directory: ./nitrocid-ks-v0.0.24-manual
-    - type: space
       key: space-35
       title: Nitrocid KS v0.1.1 - RTM
       path: nitrocid-ks-v0.1.1-rtm
@@ -387,6 +381,12 @@ site:
       path: nitrocid-ks-v0.0.23-manual
       content:
         directory: ./nitrocid-ks-v0.0.23-manual
+    - type: space
+      key: space-34
+      title: Nitrocid KS v0.0.24 - Manual
+      path: nitrocid-ks-v0.0.24-manual
+      content:
+        directory: ./nitrocid-ks-v0.0.24-manual
     - type: space
       key: space-40
       title: BassBoom v0.1.x - Manual
